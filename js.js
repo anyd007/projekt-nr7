@@ -1,4 +1,4 @@
-let todoInput, errorInfo, addBtn, ulList, liList; 
+let todoInput, errorInfo, addBtn, ulList, liList, popupBox; 
 
 const main = ()=>{
     DOMElement();
@@ -8,6 +8,7 @@ const main = ()=>{
 const DOMEvents = ()=>{
     addBtn.addEventListener('click', addTaskBtn)
     todoInput.addEventListener('keyup', enterEvent)
+    ulList.addEventListener('click', checkBtnPress);
 }
 
 const DOMElement = ()=>{
@@ -36,6 +37,7 @@ const enterEvent = () =>{
 addTaskBtn()
     }
 }
+
 const createNewTask = () =>{
     const btnPanel = document.createElement('div');
     btnPanel.classList.add('tools');
@@ -57,8 +59,10 @@ const createNewTask = () =>{
 
 }
 
+const checkBtnPress = e =>{
+    console.log(e.target.classList.value === 'edit');
+     
+}
 
-
-
-
+    
 document.addEventListener('DOMContentLoaded', main);

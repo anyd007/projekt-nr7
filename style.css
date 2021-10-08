@@ -13,6 +13,8 @@
 }
 
 body {
+    background: rgb(110,3,100);
+background: linear-gradient(90deg, rgba(110,3,100,0.21922272326899506) 0%, rgba(196,12,209,0.5217437316723564) 35%, rgba(192,0,255,0.7794468129048494) 100%);
     display: flex;
     justify-content: center;
     margin-top: 120px;
@@ -41,7 +43,9 @@ h1 {
 .header {
     border-radius: 5px 5px 0 0;
     padding: 40px;
-    background-image: linear-gradient(340deg, #045de9 0%, #09c6f9 100%);
+    /* background-image: linear-gradient(340deg, #045de9 0%, #09c6f9 100%); */
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,80,0.7010154403558299) 35%, rgba(0,212,255,1) 100%);
 }
 
 .todo-input {
