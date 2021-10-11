@@ -98,9 +98,23 @@ popupBox.style.display = 'none';
     popupInfo.textContent = 'WPROWADŹ ZADANIE'
 }
 }   
+// wprowadzenie zadania przez enter
+const enterEvent = e =>{
+    if(e.key === 'Enter'){
+        addElement();
+    }
+}
+
+const popupEnter = e =>{
+    if(e.key === 'Enter'){
+        acceptPopup();
+    }
+}
 
   
 const DOMEvents = () =>{
+    popupInput.addEventListener('keydown', popupEnter);
+    todoInput.addEventListener('keydown', enterEvent);
     popupAddBtn.addEventListener('click', acceptPopup);
     popupCloceBtn.addEventListener('click', closePopUp);
     addBtn.addEventListener('click', addElement);
