@@ -5,3 +5,5 @@ Zadaniem głównym jest stworzenie TODO listy
 Stworzenie w js div oraz butonów i nadanie im klas.
 - Appendowanie diva oraz butonów to nowo utworzonego ‘li’
 - po kliknięciu buttona ‘zatwierdź’ aktywacja stylów w CSS.
+-Aktywacja buttona ‘edytuj’, pojawia się popup do edycji zadań
+Ustawienie blokady na wprowadzenie pustej zmiany w impucie oraz korzystanie z e.target
