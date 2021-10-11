@@ -8,6 +8,8 @@ const main = ()=>{
 }
 
 const DOMElement = () =>{
+    todoH1 = document.querySelector('h1');
+    todoH1.textContent = 'MOJA LISTA ZADAŃ'
     todoInput = document.querySelector('.todo-input');
     errorInfo = document.querySelector('.error-info');
     errorInfo.textContent = 'wprowadź zadanie'
