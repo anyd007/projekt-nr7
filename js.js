@@ -30,7 +30,9 @@ const addElement = () =>{
         errorInfo.textContent = '';
         createTools();
     }else{
+        todoInput.classList.toggle('blank');
         errorInfo.textContent = 'WPROWADŹ NOWE ZADANIE'
+        
     }
 }
 // stworzenie diva z buttonami
@@ -95,6 +97,8 @@ todoToEdit.firstChild.textContent = popupInput.value;
 popupInfo.textContent = '';
 popupBox.style.display = 'none';
     }else{
+    popupInput.classList.add('blank')
+    popupInput.classList.add('blank')
     popupInfo.textContent = 'WPROWADŹ ZADANIE'
 }
 }   
