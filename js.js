@@ -30,8 +30,13 @@ const addElement = () =>{
         ulList.append(newList);
         todoInput.value = '';
         errorInfo.textContent = '';
+        todoH1.textContent = 'MOJA LISTA ZADAŃ'
         createTools();
     }else{
+        const allLi = ulList.querySelectorAll('li')
+        if(allLi.length === 0){
+        todoH1.textContent = 'MOJA LISTA ZADAŃ.....JEST PUSTA'
+        }
         todoInput.classList.toggle('blank');
         errorInfo.textContent = 'WPROWADŹ NOWE ZADANIE'
         

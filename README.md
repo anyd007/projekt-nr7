@@ -9,3 +9,4 @@ Stworzenie w js div oraz butonów i nadanie im klas.
 -Ustawienie blokady na wprowadzenie pustej zmiany w impucie oraz korzystanie z e.target
 -Na buttonie delelte, dodana funkcja usuwająca zadanie (e.target.colsest(‘li’).remove()
 -Dodanie akceptacji zadania w inpucie przez enter
+- h1 zmienia się w zależności od tego czy lista jest pusta
