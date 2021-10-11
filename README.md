@@ -2,4 +2,6 @@
 
 Zadaniem głównym jest stworzenie TODO listy  
 -Aktywowanie przycisku dodawania oraz wprowadzanie nowych zadań do listy.
-Ostylowanie dodanych elementów zadań w javasrypt, oraz aktywacja enter
+Stworzenie w js div oraz butonów i nadanie im klas.
+- Appendowanie diva oraz butonów to nowo utworzonego ‘li’
+- po kliknięciu buttona ‘zatwierdź’ aktywacja stylów w CSS.

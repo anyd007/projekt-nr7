@@ -1,68 +1,78 @@
-let todoInput, errorInfo, addBtn, ulList, liList, popupBox; 
+let todoInput, errorInfo, addBtn, ulList, newList, popupBox; 
 
 const main = ()=>{
     DOMElement();
     DOMEvents();
 }
 
-const DOMEvents = ()=>{
-    addBtn.addEventListener('click', addTaskBtn)
-    todoInput.addEventListener('keyup', enterEvent)
-    ulList.addEventListener('click', checkBtnPress);
-}
-
-const DOMElement = ()=>{
+const DOMElement = () =>{
     todoInput = document.querySelector('.todo-input');
     errorInfo = document.querySelector('.error-info');
     addBtn = document.querySelector('.btn-add');
     ulList = document.querySelector('.todolist ul');
 }
 
-const addTaskBtn = ()=>{
+// dodanie fukcjonalności na inputa
+const addElement = () =>{
     if(todoInput.value !== ''){
-        liList= document.createElement('li');
-        liList.textContent = todoInput.value;
-        createNewTask();
-        ulList.append(liList);
-        todoInput.value = ''
-        errorInfo.textContent = 'podaj kolejne zadanie'
+        newList = document.createElement('li');
+        newList.textContent = todoInput.value;
+        ulList.append(newList);
+        todoInput.value = '';
+        errorInfo.textContent = '';
+        createTools();
     }else{
-        errorInfo.textContent = 'Podaj nowe zadanie'
-        
+        errorInfo.textContent = 'WPROWADŹ NOWE ZADANIE'
     }
 }
+// stworzenie diva z buttonami
+const createTools = () =>{
+    const styleDiv = document.createElement('div');
+    styleDiv.classList.add('tools');
+    newList.append(styleDiv);
 
-const enterEvent = () =>{
-    if(event.key === 'Enter' || event.keyCode === 13){
-addTaskBtn()
-    }
-}
-
-const createNewTask = () =>{
-    const btnPanel = document.createElement('div');
-    btnPanel.classList.add('tools');
-    liList.append(btnPanel);
-
-    const confirmBtn = document.createElement('button');
-    confirmBtn.classList.add('complete');
-    confirmBtn.innerHTML = '<i class="fas fa-check"></i>'
+    const compliteBtn = document.createElement('button');
+    compliteBtn.classList.add('complete');
+    compliteBtn.innerHTML ='<i class="fas fa-check"></i>'
+    styleDiv.append(compliteBtn);
 
     const editBtn = document.createElement('button');
     editBtn.classList.add('edit');
-    editBtn.textContent = 'EDYTUJ'
+    editBtn.textContent = 'EDYTUJ';
+    styleDiv.append(editBtn);
 
     const deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('delete');
-    deleteBtn.innerHTML = '<i class="fas fa-times"></i>'
-
-    btnPanel.append(confirmBtn, editBtn, deleteBtn)
-
+    deleteBtn.classList.add('delete2');
+    deleteBtn.innerHTML = '<i class="fas fa-times"></i>';
+    styleDiv.append(deleteBtn);
 }
 
-const checkBtnPress = e =>{
-    console.log(e.target.classList.value === 'edit');
-     
-}
+// sprawdzanie buttonów
+const checkButtons = e => {
+   if(e.target.matches('.complete')){
+       e.target.closest('li').classList.toggle('completed');
+       e.target.classList.toggle('completed')
+   }else if(e.target.matches('.edit')){
 
+   }else if(e.target.matches('.delete')){
+
+   }
+//    console.log(e.target.classList.value === 'complete');
+}
+  
+
+
+
+
+
+
+const DOMEvents = () =>{
+    addBtn.addEventListener('click', addElement);
+    ulList.addEventListener('click', checkButtons);
+}
     
+
 document.addEventListener('DOMContentLoaded', main);
+
+
+
