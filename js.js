@@ -10,6 +10,7 @@ const main = ()=>{
 const DOMElement = () =>{
     todoInput = document.querySelector('.todo-input');
     errorInfo = document.querySelector('.error-info');
+    errorInfo.textContent = 'wprowadź zadanie'
     addBtn = document.querySelector('.btn-add');
     ulList = document.querySelector('.todolist ul');
     popupBox = document.querySelector('.popup');
@@ -61,12 +62,21 @@ const checkButtons = e => {
     e.target.classList.toggle('completed');
   }else if(e.target.matches('.edit')){
         editBox(e);
-
-  }else if(e.target.matches('.delete')){
-
+     }else if(e.target.matches('.delete2')){
+        deleteTask(e);
   }
 //    console.log(e.target.classList.value === 'complete');
 }
+// usuwanie z listy wykonanych zadań
+const deleteTask = e =>{
+    e.target.closest('li').remove()
+    const allLi = ulList.querySelectorAll('li');
+    if(allLi.length === 0){
+        errorInfo.textContent = 'lista jest pusta'
+    }
+}
+
+
 // edycja POPUP, pobranie danych 'e'
 const editBox = e =>{
     todoToEdit = e.target.closest('li');
